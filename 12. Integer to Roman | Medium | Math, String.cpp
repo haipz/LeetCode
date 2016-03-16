@@ -8,7 +8,7 @@ class Solution {
 public:
     string intToRoman(int num) {
         int nums[] = {1, 5, 10, 50, 100, 500, 1000, 5000, 10000};
-        string chs = "IVXLCDM??", roman;
+        string chs("IVXLCDM??"), roman;
         for (int i = chs.size() - 2; i >= 0; i -= 2) {
             if (num >= nums[i - 1]*9) {
                 num -= nums[i - 1]*9;
