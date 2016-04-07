@@ -10,6 +10,7 @@ Given input array nums = [3,2,2,3], val = 3
 
 Your function should return length = 2, with the first two elements of nums being 2.
 */
+/*
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -19,5 +20,15 @@ public:
             else ++it;
         }
         return nums.size();
+    }
+};
+*/
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int n = nums.size() - 1;
+        for (int i = 0; i <= n; ++i)
+            while (i <= n && nums[i] == val) swap(nums[i], nums[n--]);
+        return n + 1;
     }
 };
